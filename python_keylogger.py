@@ -57,4 +57,7 @@ with open(etcFileName, 'rb') as etcFD :
     etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
     msg.attach(etcPart) 
 
+#send email
+s.sendmail("fro_email_address@gmail.com", "to_email_address@gmail.com", msg.as_string())
+
 
