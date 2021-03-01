@@ -60,4 +60,5 @@ with open(etcFileName, 'rb') as etcFD :
 #send email
 s.sendmail("fro_email_address@gmail.com", "to_email_address@gmail.com", msg.as_string())
 
-
+#quit session
+s.quit()
